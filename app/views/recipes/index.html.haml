@@ -1,5 +1,8 @@
 .recipes.bg-grey
 .center
+  = form_with url: search_recipes_path, method: :post, local: true do |form|
+    = form.text_field :search, placeholder: 'Search'
+    = form.submit 'Search'
   %h1 Recipes
   %p= link_to 'New Recipe', new_recipe_path
 
